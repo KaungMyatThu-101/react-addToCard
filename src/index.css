@@ -1,0 +1,147 @@
+* {
+  background-color: #fff;
+  box-sizing: border-box;
+  margin: 0 auto;
+  font-family: "Poppins", sans-serif;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+.nav h2 {
+  font-size: 32px;
+  color: orange;
+}
+.nav button,
+.cards button {
+  padding: 10px 20px;
+  border: solid orange 1px;
+  background-color: orange;
+  color: #fff;
+  border-radius: 9px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.nav span {
+  background-color: orange;
+}
+
+.summary {
+  text-align: center;
+  align-items: center;
+  padding: 20px 30px;
+}
+p {
+  font-weight: 400;
+  font-size: 18px;
+  padding: 4px;
+  color: dimgray;
+}
+.body {
+  width: 90%;
+  padding: 10px 0;
+}
+.cards {
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid orange;
+}
+.card-right {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+.card-input {
+  width: 50%;
+}
+.backdrop {
+  width: 100%;
+  min-height: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-box {
+  padding: 20px;
+  background-color: #fff;
+  width: 60%;
+  z-index: 1000;
+  position: relative;
+  border-radius: 10px;
+}
+
+.cart {
+  padding: 20px;
+}
+
+.total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.total p {
+  font-size: 20px;
+  font-weight: 800;
+}
+.cart-btns,
+.cart-btns button {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  cursor: pointer;
+}
+.order-btn {
+  background-color: orange;
+  border: 1px solid orange;
+  border-radius: 8px;
+  padding: 10px 20px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 18px;
+}
+.close-btn {
+  background-color: transparent;
+  border: 1px solid orange;
+  border-radius: 8px;
+  padding: 10px 20px;
+  color: orange;
+  font-weight: 600;
+  font-size: 18px;
+}
+.card-quantity {
+  text-align: center;
+  background-color: orange;
+
+  padding: 7px;
+}
+span {
+  background-color: orange;
+  color: #fff;
+  padding: 4px;
+  align-items: center;
+}
+
+.quantity-btn {
+  /* margin: 4px; */
+  background-color: transparent;
+}
+.quantity-ctr button {
+  background-color: transparent;
+  padding: 5px 10px;
+  margin: 4px;
+  color: orange;
+  font-size: 18px;
+  font-weight: 900;
+}
