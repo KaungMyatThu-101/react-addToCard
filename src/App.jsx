@@ -2,7 +2,7 @@ import "./App.css";
 import Main from "./Components/Layout/Main";
 import Header from "./Components/Layout/Header";
 import Body from "./Components/Layout/Body";
-import ItemContextProvder, { itemContext } from "./Components/Store/itemContex";
+import ItemContextProvder, { ItemContext } from "./Components/Store/itemContex";
 import { useContext } from "react";
 
 function App() {

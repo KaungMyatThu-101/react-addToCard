@@ -1,6 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ItemContext } from "./Store/itemContex";
 
 const Carditem = ({ fruit }) => {
+  const { addItem, removeItem } = useContext(ItemContext);
+
+  const addAmountHandler = () => {
+    addItem({ ...fruit, amount: 1 });
+  };
+  const removeAmountHandler = () => {
+    removeItem(fruit.id);
+  };
   return (
     <section className="cards cart">
       <div>
@@ -9,11 +18,15 @@ const Carditem = ({ fruit }) => {
       </div>
       <div className="card-right">
         <span className="card-quantity">
-          x<span>1</span>
+          x<span>{fruit.amount}</span>
         </span>
         <div className="quantity-ctr">
-          <button className="quantity-btn">+</button>
-          <button className="quantity-btn">-</button>
+          <button onClick={addAmountHandler} className="quantity-btn">
+            +
+          </button>
+          <button onClick={removeAmountHandler} className="quantity-btn">
+            -
+          </button>
         </div>
       </div>
     </section>

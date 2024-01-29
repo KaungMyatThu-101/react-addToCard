@@ -1,9 +1,9 @@
 import React from "react";
 import { useContext } from "react";
-import { itemContext } from "./Store/itemContex";
+import { ItemContext } from "./Store/itemContex";
 
 const Nav = (props) => {
-  const { items } = useContext(itemContext);
+  const { items } = useContext(ItemContext);
   const totalCart = items.reduce((currentVal, item) => {
     return currentVal + item.amount;
   }, 0);

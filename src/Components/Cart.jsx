@@ -1,44 +1,48 @@
-import React from "react";
+import React, { useContext } from "react";
 import Carditem from "./Carditem";
-
-const fruits = [
-  {
-    id: 1,
-    price: 23,
-    name: "banana",
-    description: "yummy yummy banana",
-  },
-  {
-    id: 2,
-    price: 40,
-    name: "water malon",
-    description: "yummy yummy yummy water malon",
-  },
-  {
-    id: 3,
-    price: 50,
-    name: "apple",
-    description: "yummy yummy yummy apple",
-  },
-];
+import { ItemContext } from "./Store/itemContex";
 
 const Cart = (props) => {
+  const { items, totalAmount } = useContext(ItemContext);
+  const totalPrice = `${totalAmount.toFixed(2)}`;
   return (
     <section className="card-box">
-      <h2>carts</h2>
-      {fruits.map((fruit) => (
-        <Carditem key={fruit.id} fruit={fruit}></Carditem>
-      ))}
-      <hr />
+      <h2>Heare is your shopping cart!!!</h2>
+      <br />
+      <section className="overFlow">
+        {items.length < 1 ? (
+          <h1 className="no-item">no item</h1>
+        ) : (
+          <>
+            {items.map((fruit) => (
+              <Carditem key={fruit.id} fruit={fruit}></Carditem>
+            ))}
+            <hr />
+          </>
+        )}
+      </section>
       <div className="total">
         <h3>Total Price</h3>
-        <p>$ 3000</p>
+        <p>$ {totalPrice}</p>
       </div>
       <div className="cart-btns">
         <button onClick={props.hideCarthandler} className="close-btn">
           close
         </button>
-        <button className="order-btn">order</button>
+        {items.length < 1 ? (
+          <></>
+        ) : (
+          <>
+            <button
+              onClick={() => {
+                alert("ordered");
+              }}
+              className="order-btn"
+            >
+              order
+            </button>
+          </>
+        )}
       </div>
     </section>
   );
